@@ -1,0 +1,9 @@
+.eslintignore
+.eslintrc.yml
+.gitignore
+.travis.yml
+builder.js
+min-data.js
+spellaphone.js
+words.txt
+docs/

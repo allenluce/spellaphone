@@ -1,0 +1,83 @@
+{
+  "name": "spellaphone",
+  "version": "1.0.2",
+  "description": "Convert phone numbers to English phrases",
+  "main": "index.js",
+  "browser": {
+    "./data.js": "min-data.js"
+  },
+  "scripts": {
+    "test": "mocha -t 5000",
+    "build": "browserify -r .:spellaphone > spellaphone.js",
+    "lint": "eslint .",
+    "posttest": "projectz compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allenluce/spellaphone.git"
+  },
+  "bin": {
+    "spellaphone": "cli.js"
+  },
+  "keywords": [
+    "phonespell",
+    "telephone",
+    "spellaphone"
+  ],
+  "author": "Allen Luce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allenluce/spellaphone/issues"
+  },
+  "homepage": "http://spellaphone.org",
+  "dependencies": {
+    "binary-search-bounds": "^2.0.4",
+    "stringify-object": "^3.2.2",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "browser-resolve": "^1.11.2",
+    "browserify": "^16.2.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-chai-expect": "^1.1.1",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-eslint-comments": "^2.0.2",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "eslint-plugin-no-inferred-method-name": "^1.0.2",
+    "eslint-plugin-no-use-extend-native": "^0.3.12",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-objects": "^1.1.1",
+    "eslint-plugin-optimize-regex": "^1.1.5",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-unicorn": "^4.0.3",
+    "gittify": "^1.0.2",
+    "mocha": "^5.1.1",
+    "projectz": "^1.4.0"
+  },
+  "yargs": {
+    "parse-numbers": false
+  },
+  "browserify": {
+    "transform": [
+      "gittify"
+    ]
+  },
+  "maintainers": [],
+  "contributors": [
+    "Doug Luce (https://github.com/dougluce)"
+  ],
+  "demo": "https://jsfiddle.net/allenluce/c49r5b4b/",
+  "browsers": true,
+  "badges": {
+    "list": [
+      "travisci",
+      "npmversion"
+    ]
+  }
+}

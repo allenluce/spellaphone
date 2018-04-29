@@ -1,0 +1,55 @@
+extends:
+  - standard
+  -  plugin:unicorn/recommended
+plugins:
+  - chai-expect
+  - chai-friendly
+  - eslint-comments
+  - mocha
+  - no-inferred-method-name
+  - no-use-extend-native
+  - objects
+  - optimize-regex
+  - prefer-object-spread
+  - security
+  - standard
+  - unicorn
+settings:
+  ecmascript: 6
+rules:
+  object-property-newline: off
+  optimize-regex/optimize-regex: warn
+  prefer-const: error
+  prefer-object-spread/prefer-object-spread: error
+  no-unused-expressions: off
+  no-var: error
+  chai-friendly/no-unused-expressions: error
+  chai-expect/missing-assertion: error
+  chai-expect/terminating-properties: warn
+  chai-expect/no-inner-compare: warn
+  mocha/handle-done-callback: warn
+  mocha/no-exclusive-tests: error
+  mocha/no-global-tests: error
+  mocha/no-identical-title: error
+  mocha/no-mocha-arrows: error
+  mocha/no-nested-tests: warn
+  mocha/no-return-and-callback: warn
+  mocha/no-sibling-hooks: error
+  mocha/no-skipped-tests: warn
+  mocha/no-top-level-hooks: warn
+  mocha/valid-suite-description: warn
+  unicorn/no-process-exit: off
+  unicorn/filename-case: off
+  security/detect-buffer-noassert: warn
+  security/detect-disable-mustache-escape: warn
+  security/detect-eval-with-expression: warn
+  security/detect-new-buffer: warn
+  security/detect-no-csrf-before-method-override: warn
+  security/detect-possible-timing-attacks: warn
+  security/detect-pseudoRandomBytes: warn
+  security/detect-unsafe-regex: warn
+  eslint-comments/disable-enable-pair: error
+  eslint-comments/no-duplicate-disable: error
+  eslint-comments/no-unlimited-disable: error
+  eslint-comments/no-unused-disable: error
+  eslint-comments/no-unused-enable: error
