@@ -2,24 +2,55 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="docs/favicons/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="docs/favicons/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="docs/favicons/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="docs/favicons/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="docs/favicons/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="docs/favicons/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="docs/favicons/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="docs/favicons/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="docs/favicons/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="docs/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="docs/favicons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="docs/favicons/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="docs/favicons/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="Spellaphone"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="docs/favicons/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="docs/favicons/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="docs/favicons/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="docs/favicons/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="docs/favicons/mstile-310x310.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="docs/favicons/favicon.ico">
   <title>SpellaPhone</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
-        integrity="sha256-Ndk1ry+oGNFEaXt4kxlW/SYLbxat1O0DhaDd+lob0SY="
-        crossorigin="anonymous" />
+  <link rel="stylesheet" href="docs/index.css" />
 </head>
 <body>
   <a href="https://github.com/allenluce/spellaphone">
     <img style="position: absolute; top: 0; right: 0; border: 0;"
          src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
-         alt="Fork me on GitHub"></a>
+         alt="Fork me on GitHub">
+  </a>
   <div id="content" class="markdown-body"></div>
   <script type="application/javascript"
           src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script type="application/javascript">
+    function handle(ex) {
+      document.getElementById('content').innerHTML = marked(ex.target.responseText)
+      // Fill in the blank demo div in README.md
+      document.getElementById('demo').innerHTML = `
+<h6>(Or type in a word to see it in numbers.)</h6>
+<div class="intrinsic-container">
+    <iframe src="docs/demo.html" allowfullscreen></iframe>
+</div>
+`
+    }
     const request = new XMLHttpRequest()
-    request.open('GET', 'README.md', false)
-    request.send(null)
-    document.getElementById('content').innerHTML = marked(request.responseText)
+    request.onload = handle
+    request.open('GET', 'README.md')
+    request.send()
   </script>
 </body>
 </html>

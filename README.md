@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/allenluce/spellaphone/raw/master/docs/spellaphone.png?raw=true" alt="SpellaPhone" width="985" height="319">
+  <img src="https://github.com/allenluce/spellaphone/raw/master/docs/spellaphone.png?raw=true" alt="SpellaPhone" width="985" height="319" />
 </p>
 
 <!-- BADGES/ -->
@@ -9,16 +9,16 @@
 
 <!-- /BADGES -->
 
-
-## Translate phone numbers into words!
+## Find out what your number spells!
+<div id="demo"></div>
 
 ### Use in the browser!
 
-<a href="https://jsfiddle.net/allenluce/c49r5b4b/5/" target="blank">
-  <img align="center" src="https://github.com/allenluce/spellaphone/raw/master/docs/web.gif?raw=true" alt="A web page goes here" width="422" height="328">
+<a href="https://jsfiddle.net/allenluce/c49r5b4b/" target="blank">
+  <img align="center" src="https://github.com/allenluce/spellaphone/raw/master/docs/web.gif?raw=true" alt="A web page goes here" width="333" height="289" />
 </a>
 
-    <script src="https://cdn.rawgit.com/allenluce/spellaphone/379b4a00/spellaphone.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone/spellaphone.js"></script>
     <script>
       const spellaPhone = require('spellaphone')
       const words = spellaPhone('7976638377')
@@ -27,11 +27,11 @@
 
 ### Use on the command line!
 
-<img src="https://github.com/allenluce/spellaphone/raw/master/docs/flat.gif?raw=true" alt="npm install -g spellaphone" width="815" height="226">
+<img src="https://github.com/allenluce/spellaphone/raw/master/docs/flat.gif?raw=true" alt="npm install -g spellaphone" width="815" height="226" />
 
 ### Spell a bunch 'o numbers:
 
-<img src="https://github.com/allenluce/spellaphone/raw/master/docs/bulk.gif?raw=true" alt="npm install -g spellaphone" width="888" height="824">
+<img src="https://github.com/allenluce/spellaphone/raw/master/docs/bulk.gif?raw=true" alt="npm install -g spellaphone" width="888" height="824" />
 
 #### Use with Node.js!  Install:
 
