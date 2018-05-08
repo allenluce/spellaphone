@@ -1,3 +1,4 @@
+'use strict'
 /* global describe it */
 const expect = require('chai').expect
 const childProcess = require('child_process')
@@ -19,7 +20,12 @@ describe('SpellaPhone module', function () {
 })
 
 function testArgsInput (args, input, done) {
-  let expects = [].concat(...args.map(a => expectations[a]))
+  let expects = args.map(a => expectations[a])
+  if (expects.length > 0) {
+    expects = expects.reduce(function (a, c) {
+      return a.concat(c)
+    })
+  }
   args.unshift('-n')
   const child = childProcess.execFile('./cli.js', args, (error, stdout) => {
     expect(error).to.not.exist

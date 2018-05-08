@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>SpellaPhone Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-solarized-theme@1.0.3/dist/css/solarized-dark-theme.min.css" />
+
+    <link rel="stylesheet" href="demo.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="application/javascript"
+            src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone/spellaphone.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-group row">
+        <div class="col-sm-12 input-group">
+          <input type="text" class="form-control" id="number"
+                 placeholder="(type a number or a word)">
+          <span class="input-group-addon btn btn-primary" id="spellit">
+            Spell!
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <ul class="list-group col-sm-12" id="output"></ul>
+      </div>
+    </div>
+    <script type="application/javascript">
+      const spell = require('spellaphone')
+
+      const tr = {
+        a: 2, b: 2, c: 2,
+        d: 3, e: 3, f: 3,
+        g: 4, h: 4, i: 4,
+        j: 5, k: 5, l: 5,
+        m: 6, n: 6, o: 6,
+        p: 7, r: 7, s: 7,
+        t: 8, u: 8, v: 8,
+        w: 9, x: 9, y: 9
+      }
+
+      function clearlist (cl) {
+        const ul = document.getElementById(cl)
+        while (ul.firstChild) {
+          ul.removeChild(ul.firstChild)
+        }
+      }
+
+      function insert (word, extraClass) {
+        const li = document.createElement('li')
+        li.className = 'list-group-item ' + extraClass
+        li.appendChild(document.createTextNode(word))
+        document.getElementById('output').appendChild(li)
+      }
+
+      function byInterest (a, b) {
+        const byDigits = a.replace(/[^0-9]/g,'').length - b.replace(/[^0-9]/g,'').length
+        if (byDigits !== 0) return byDigits
+        // Secondary: by number count
+        const bySpaces = a.split(' ').length - b.split(' ').length
+        return bySpaces
+      }
+
+      function process (event) {
+        if (event.which !== 13 && event.type !== 'click') return
+        event.preventDefault();
+        clearlist('output')
+        let input = document.getElementById('number').value
+        if (/[a-zA-Z]+/.test(input)) { // Are there letters in it?
+          // Translate to numbers
+          const old = input
+          input = input.toLowerCase().split('').map(function(c) { return tr[c] || c }).join('')
+          insert(old + ' in numbers: ' + input, 'list-group-item-info')
+          insert('Other words that match ' + input + ':')
+        }
+        const number = input.replace(/\D/g, '')
+        const words = spell(number)
+        words.sort(byInterest)
+        words.forEach(insert)
+        insert('Records found: ' + words.length)
+      }
+
+      $("#number").keypress(process)
+      $("#spellit").click(process)
+
+    </script>
+  </body>
+</html>
