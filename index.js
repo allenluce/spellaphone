@@ -3,9 +3,9 @@ const trie = require('./data')
 const automata = createAC(trie)
 
 module.exports = function (number) {
-  const numbers = search(number.split('').map(n => +n), automata, [])
+  const numbers = search(number.split('').map(function (n) { return +n }), automata, [])
   // Filter a few out
-  return numbers.filter(num => {
+  return numbers.filter(function (num) {
     // Nothing but numbers?
     if (/^\d+$/.test(num)) return false
     // Only 1-letter words + numbers?
@@ -45,7 +45,7 @@ function search (data, initState, soFar) {
       if (cur.v.length === 0) {
         wordlist = wordlist.concat(search(data.slice(i), initState, coalesceNumbers(soFar, data.slice(0, i).join(''))))
       }
-      cur.v.forEach(word => {
+      cur.v.forEach(function (word) {
         if (word.length === i) {
           wordlist = wordlist.concat(search(data.slice(i), initState, [...soFar, word]))
           return
