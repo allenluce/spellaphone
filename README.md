@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="https://github.com/allenluce/spellaphone/raw/master/docs/spellaphone.png?raw=true" alt="SpellaPhone" width="985" height="319" />
+  <img src="https://github.com/allenluce/spellaphone/raw/master/docs/spellaphone.png?raw=true"
+  alt="SpellaPhone" style="height: 100%; width: 100%; object-fit: cover" />
 </p>
 
 <!-- BADGES/ -->
@@ -9,13 +10,14 @@
 
 <!-- /BADGES -->
 
+
 ## Find out what your number spells!
 <div id="demo"></div>
 
 ### Use in the browser!
 
 <a href="https://jsfiddle.net/allenluce/c49r5b4b/" target="blank">
-  <img align="center" src="https://github.com/allenluce/spellaphone/raw/master/docs/web.gif?raw=true" alt="A web page goes here" width="333" height="289" />
+  <img align="center" src="https://github.com/allenluce/spellaphone/raw/master/docs/web.gif?raw=true" alt="A web page goes here" />
 </a>
 
     <script src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone/spellaphone.js"></script>
@@ -27,11 +29,11 @@
 
 ### Use on the command line!
 
-<img src="https://github.com/allenluce/spellaphone/raw/master/docs/flat.gif?raw=true" alt="npm install -g spellaphone" width="815" height="226" />
+<img src="https://github.com/allenluce/spellaphone/raw/master/docs/flat.gif?raw=true" alt="npm install -g spellaphone" />
 
 ### Spell a bunch 'o numbers:
 
-<img src="https://github.com/allenluce/spellaphone/raw/master/docs/bulk.gif?raw=true" alt="npm install -g spellaphone" width="888" height="824" />
+<img src="https://github.com/allenluce/spellaphone/raw/master/docs/bulk.gif?raw=true" alt="npm install -g spellaphone" />
 
 #### Use with Node.js!  Install:
 

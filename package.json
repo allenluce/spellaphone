@@ -56,7 +56,7 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-unicorn": "^4.0.3",
-    "gittify": "^1.0.2",
+    "gittify": "^1.0.0",
     "mocha": "^5.1.1",
     "projectz": "^1.4.0"
   },
@@ -70,7 +70,8 @@
   },
   "maintainers": [],
   "contributors": [
-    "Doug Luce (https://github.com/dougluce)"
+    "Doug Luce (https://github.com/dougluce)",
+    "Allen Luce (https://github.com/allenluce)"
   ],
   "demo": "https://jsfiddle.net/allenluce/c49r5b4b/",
   "browsers": true,
