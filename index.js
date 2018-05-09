@@ -1,3 +1,4 @@
+'use strict'
 const createAC = require('./ac')
 const trie = require('./data')
 const automata = createAC(trie)
@@ -17,9 +18,9 @@ module.exports = function (number) {
 function coalesceNumbers (soFar, nums) {
   const lastSoFar = soFar[soFar.length - 1]
   if (lastSoFar && lastSoFar.length > 0 && '0123456789'.indexOf(lastSoFar[lastSoFar.length - 1]) !== -1) {
-    return [...soFar.slice(0, soFar.length - 1), lastSoFar + nums]
+    return soFar.slice(0, soFar.length - 1).concat(nums)
   } else {
-    return [...soFar, nums]
+    return soFar.concat(nums)
   }
 }
 
@@ -47,11 +48,11 @@ function search (data, initState, soFar) {
       }
       cur.v.forEach(function (word) {
         if (word.length === i) {
-          wordlist = wordlist.concat(search(data.slice(i), initState, [...soFar, word]))
+          wordlist = wordlist.concat(search(data.slice(i), initState, soFar.concat(word)))
           return
         }
         const sf = coalesceNumbers(soFar, data.slice(0, i - word.length).join(''))
-        wordlist = wordlist.concat(search(data.slice(i), initState, [...sf, word]))
+        wordlist = wordlist.concat(search(data.slice(i), initState, sf.concat(word)))
       })
     }
   }
