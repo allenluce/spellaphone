@@ -6,6 +6,7 @@
   "browser": {
     "./data.js": "min-data.js"
   },
+  "jsdelivr": "spellaphone.js",
   "scripts": {
     "test": "mocha -t 5000",
     "build": "browserify -r .:spellaphone > spellaphone.js",
