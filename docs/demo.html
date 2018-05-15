@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="demo.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script type="application/javascript"
-            src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone@1.0.4/spellaphone.js"></script>
+            src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone@1/spellaphone.js"></script>
+    <script src="https://cdn.ravenjs.com/3.25.1/raven.min.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
@@ -27,6 +28,8 @@
       </div>
     </div>
     <script type="application/javascript">
+      Raven.config('https://10622c2370da4372bffd69ecca6b8478@sentry.io/1206939').install()
+      Raven.context(function () {
       const spell = require('spellaphone')
 
       const tr = {
@@ -64,7 +67,7 @@
 
       function process (event) {
         if (event.which !== 13 && event.type !== 'click') return
-        event.preventDefault();
+        event.preventDefault()
         clearlist('output')
         let input = document.getElementById('number').value
         if (/[a-zA-Z]+/.test(input)) { // Are there letters in it?
@@ -83,7 +86,7 @@
 
       $("#number").keypress(process)
       $("#spellit").click(process)
-
+      })
     </script>
   </body>
 </html>
