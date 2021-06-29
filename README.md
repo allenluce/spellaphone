@@ -1,12 +1,13 @@
-<p align="center">
+<p class="logo">
   <img src="https://github.com/allenluce/spellaphone/raw/master/docs/spellaphone.png?raw=true"
-  alt="SpellaPhone" style="height: 100%; width: 100%; object-fit: cover" />
+  alt="SpellaPhone" />
 </p>
 
 <!-- BADGES/ -->
-
-<span class="badge-travisci"><a href="http://travis-ci.org/allenluce/spellaphone" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/allenluce/spellaphone/master.svg" alt="Travis CI Build Status" /></a></span>
-<span class="badge-npmversion"><a href="https://npmjs.org/package/spellaphone" title="View this project on NPM"><img src="https://img.shields.io/npm/v/spellaphone.svg" alt="NPM version" /></a></span>
+<div class="span">
+  <span class="badge-travisci"><a href="http://travis-ci.org/allenluce/spellaphone" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/allenluce/spellaphone/master.svg" alt="Travis CI Build Status" /></a></span>
+  <span class="badge-npmversion"><a href="https://npmjs.org/package/spellaphone" title="View this project on NPM"><img src="https://img.shields.io/npm/v/spellaphone.svg" alt="NPM version" /></a></span>
+</div>
 
 <!-- /BADGES -->
 
@@ -17,10 +18,10 @@
 ### Use in the browser!
 
 <a href="https://jsfiddle.net/allenluce/c49r5b4b/" target="blank">
-  <img align="center" src="https://github.com/allenluce/spellaphone/raw/master/docs/web.gif?raw=true" alt="A web page goes here" />
+  <img class="browser" src="https://github.com/allenluce/spellaphone/raw/master/docs/web.gif?raw=true" alt="A web page goes here" />
 </a>
 
-    <script src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone/spellaphone.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone/spellaphone.js"></script>
     <script>
       const spellaPhone = require('spellaphone')
       const words = spellaPhone('7976638377')
