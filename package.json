@@ -77,6 +77,8 @@
   "demo": "https://jsfiddle.net/allenluce/c49r5b4b/",
   "browsers": true,
   "badges": {
-    "list": ["travisci", "npmversion"]
-  }
+    "list": [
+      "travisci",
+      "npmversion"]
+    }
 }
