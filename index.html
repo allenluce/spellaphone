@@ -41,10 +41,10 @@
   </a>
   <div id="content" class="markdown-body"></div>
   <script type="application/javascript"
-          src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+          src="https://cdn.jsdelivr.net/npm/marked@4.0.3/marked.min.js"></script>
   <script type="application/javascript">
     function handle(ex) {
-      document.getElementById('content').innerHTML = marked(ex.target.responseText)
+      document.getElementById('content').innerHTML = marked.parse(ex.target.responseText)
       // Fill in the blank demo div in README.md
       document.getElementById('demo').innerHTML = ' \
 <h6>(Or type in a word to see it in numbers.)</h6> \
