@@ -21,7 +21,7 @@
   <img class="browser" src="https://github.com/allenluce/spellaphone/raw/master/docs/web.gif?raw=true" alt="A web page goes here" />
 </a>
 
-  <script src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone/spellaphone.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/allenluce/spellaphone/spellaphone.js"></script>
     <script>
       const spellaPhone = require('spellaphone')
       const words = spellaPhone('7976638377')
