@@ -58,7 +58,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-unicorn": "^10.0.0",
     "gittify": "^1.0.2",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "projectz": "^1.7.4"
   },
   "yargs": {
